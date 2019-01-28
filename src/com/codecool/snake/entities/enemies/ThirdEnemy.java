@@ -12,15 +12,15 @@ import javafx.geometry.Point2D;
 
 
 
-public class SimpleEnemy extends Enemy implements Animatable, Interactable {
+public class ThirdEnemy extends Enemy implements Animatable, Interactable {
 
     private Point2D heading;
     private static Random rnd = new Random();
 
-    public SimpleEnemy() {
-        super(10);
+    public ThirdEnemy() {
+        super(15);
 
-        setImage(Globals.getInstance().getImage("SimpleEnemy"));
+        setImage(Globals.getInstance().getImage("ThirdEnemy"));
         setX(rnd.nextDouble() * Globals.WINDOW_WIDTH);
         setY(rnd.nextDouble() * Globals.WINDOW_HEIGHT);
 
