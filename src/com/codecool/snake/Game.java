@@ -1,10 +1,9 @@
 package com.codecool.snake;
 
-import com.codecool.snake.entities.enemies.SimpleEnemy;
 import com.codecool.snake.entities.enemies.FirstEnemy;
 import com.codecool.snake.entities.enemies.SecondEnemy;
 import com.codecool.snake.entities.enemies.ThirdEnemy;
-import com.codecool.snake.entities.powerups.SimplePowerUp;
+import com.codecool.snake.entities.powerups.DragonBall1;
 import com.codecool.snake.entities.powerups.DragonBall3;
 import com.codecool.snake.entities.powerups.DragonBall5;
 import com.codecool.snake.entities.snakes.Snake;
@@ -58,7 +57,7 @@ public class Game extends Pane {
 
     private void spawnPowerUps(int numberOfPowerUps) {
         for(int i = 0; i < numberOfPowerUps; ++i){
-            new SimplePowerUp();
+            new DragonBall1();
             new DragonBall3();
             new DragonBall5();
         }

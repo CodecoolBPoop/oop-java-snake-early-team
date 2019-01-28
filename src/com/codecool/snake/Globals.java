@@ -35,8 +35,9 @@ public class Globals {
         resources.addImage("FirstEnemy", new Image("enemy1.png"));
         resources.addImage("SecondEnemy", new Image("enemy2.png"));
         resources.addImage("ThirdEnemy", new Image("enemy3.png"));
-        resources.addImage("PowerUpBerry", new Image("dragonball1.png"));
+        resources.addImage("DragonBall1", new Image("dragonball1.png"));
         resources.addImage("DragonBall3", new Image("dragonball3.png"));
+        resources.addImage("DragonBall4", new Image("dragonball4.png"));
         resources.addImage("DragonBall5", new Image("dragonball5.png"));
     }
 
