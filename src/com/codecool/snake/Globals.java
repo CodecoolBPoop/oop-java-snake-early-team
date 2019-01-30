@@ -2,7 +2,6 @@ package com.codecool.snake;
 
 import com.codecool.snake.resources.Resources;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Pane;
 
 // class for holding all static stuff
 public class Globals {
@@ -49,4 +48,6 @@ public class Globals {
     private Globals() {
         // singleton needs the class to have private constructor
     }
+
+
 }

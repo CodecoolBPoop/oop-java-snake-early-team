@@ -18,7 +18,7 @@ public class FirstEnemy extends Enemy implements Animatable, Interactable {
     private static Random rnd = new Random();
 
     public FirstEnemy() {
-        super(15);
+        super(5);
 
         setImage(Globals.getInstance().getImage("FirstEnemy"));
         setX(rnd.nextDouble() * Globals.WINDOW_WIDTH);
@@ -43,7 +43,7 @@ public class FirstEnemy extends Enemy implements Animatable, Interactable {
     }
 
     @Override
-    public void apply(GameEntity entity) {
+    public void entitiesCollision(GameEntity entity) {
         if(entity instanceof SnakeHead){
             System.out.println(getMessage());
             destroy();

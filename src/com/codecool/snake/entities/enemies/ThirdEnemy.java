@@ -43,7 +43,7 @@ public class ThirdEnemy extends Enemy implements Animatable, Interactable {
     }
 
     @Override
-    public void apply(GameEntity entity) {
+    public void entitiesCollision(GameEntity entity) {
         if(entity instanceof SnakeHead){
             System.out.println(getMessage());
             destroy();

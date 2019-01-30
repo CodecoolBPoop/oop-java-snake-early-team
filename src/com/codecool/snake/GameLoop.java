@@ -44,8 +44,8 @@ public class GameLoop {
                     GameEntity otherObj = gameObjs.get(otherObjIdx);
                     if (otherObj instanceof Interactable){
                         if(objToCheck.getBoundsInParent().intersects(otherObj.getBoundsInParent())){
-                            ((Interactable) objToCheck).apply(otherObj);
-                            ((Interactable) otherObj).apply(objToCheck);
+                            ((Interactable) objToCheck).entitiesCollision(otherObj);
+                            ((Interactable) otherObj).entitiesCollision(objToCheck);
                         }
                     }
                 }
