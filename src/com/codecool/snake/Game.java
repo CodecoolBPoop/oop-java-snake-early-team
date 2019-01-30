@@ -1,5 +1,6 @@
 package com.codecool.snake;
 
+import com.codecool.snake.entities.enemies.SimpleEnemy;
 import com.codecool.snake.entities.enemies.FirstEnemy;
 import com.codecool.snake.entities.enemies.SecondEnemy;
 import com.codecool.snake.entities.powerups.DragonBall1;
@@ -10,10 +11,13 @@ import com.codecool.snake.eventhandler.InputHandler;
 
 import com.sun.javafx.geom.Vec2d;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 
 
 public class Game extends Pane {
+    private Button restartBtn = new Button("Restart");
     private Snake snake = null;
     public GameTimer gameTimer = new GameTimer();
 
@@ -27,6 +31,10 @@ public class Game extends Pane {
     }
 
     public void init() {
+        BackgroundImage myBI= new BackgroundImage(new Image("background.png",1000,700,false,true),
+                BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        this.setBackground(new Background(myBI));
         spawnSnake();
         spawnEnemies(2, "FirstEnemy");
         spawnEnemies(2, "SecondEnemy");
@@ -45,6 +53,9 @@ public class Game extends Pane {
         gameTimer.setDragonBall5();
         gameTimer.setSpeedUp();
         gameTimer.play();
+
+        getChildren().add(restartBtn);
+        addRestartButtonEventHandlers();
 
     }
 
@@ -82,5 +93,18 @@ public class Game extends Pane {
         Scene scene = getScene();
         scene.setOnKeyPressed(event -> InputHandler.getInstance().setKeyPressed(event.getCode()));
         scene.setOnKeyReleased(event -> InputHandler.getInstance().setKeyReleased(event.getCode()));
+    }
+
+    public void addRestartButtonEventHandlers() {
+        restartBtn.setOnAction((event -> restartGame()));
+    }
+
+    private void restartGame() {
+
+        this.getChildren().clear();
+
+        init();
+        start();
+
     }
 }
