@@ -12,10 +12,12 @@ import com.codecool.snake.eventhandler.InputHandler;
 
 import com.sun.javafx.geom.Vec2d;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 
 
 public class Game extends Pane {
+    private Button restartBtn = new Button("Restart");
     private Snake snake = null;
     private GameTimer gameTimer = new GameTimer();
 
@@ -37,6 +39,9 @@ public class Game extends Pane {
         Globals.getInstance().setGameLoop(gameLoop);
         gameTimer.setup(gameLoop::step);
         gameTimer.play();
+        getChildren().add(restartBtn);
+        addRestartButtonEventHandlers();
+
     }
 
     public void start() {
@@ -68,5 +73,19 @@ public class Game extends Pane {
         Scene scene = getScene();
         scene.setOnKeyPressed(event -> InputHandler.getInstance().setKeyPressed(event.getCode()));
         scene.setOnKeyReleased(event -> InputHandler.getInstance().setKeyReleased(event.getCode()));
+    }
+
+    public void addRestartButtonEventHandlers() {
+        restartBtn.setOnAction((event -> restartGame()));
+    }
+
+    private void restartGame() {
+
+
+        this.getChildren().clear();
+
+        init();
+
+
     }
 }
