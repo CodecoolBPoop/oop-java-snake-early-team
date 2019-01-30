@@ -2,7 +2,6 @@ package com.codecool.snake;
 
 import com.codecool.snake.entities.enemies.FirstEnemy;
 import com.codecool.snake.entities.enemies.SecondEnemy;
-import com.codecool.snake.entities.enemies.ThirdEnemy;
 import com.codecool.snake.entities.powerups.DragonBall1;
 import com.codecool.snake.entities.powerups.DragonBall3;
 import com.codecool.snake.entities.powerups.DragonBall5;
@@ -29,13 +28,22 @@ public class Game extends Pane {
 
     public void init() {
         spawnSnake();
-        spawnEnemies(2);
-        spawnPowerUps(2);
+        spawnEnemies(2, "FirstEnemy");
+        spawnEnemies(2, "SecondEnemy");
+        spawnEnemies(2, "ThirdEnemy");
+        spawnPowerUps(1, "DragonBall1");
+        spawnPowerUps(3, "DragonBall3");
+        spawnPowerUps(1, "DragonBall5");
 
         GameLoop gameLoop = new GameLoop(snake);
         Globals.getInstance().setGameLoop(gameLoop);
         gameTimer.setup(gameLoop::step);
-        gameTimer.setSpawnEnemies();
+        gameTimer.setSpawnEnemy1();
+        gameTimer.setSpawnEnemy2();
+        gameTimer.setSpawnEnemy3();
+        gameTimer.setDragonBall1();
+        gameTimer.setDragonBall5();
+        gameTimer.setSpeedUp();
         gameTimer.play();
 
     }
@@ -50,19 +58,23 @@ public class Game extends Pane {
         snake = new Snake(new Vec2d(500, 500));
     }
 
-    public static void spawnEnemies(int numberOfEnemies) {
+    public static void spawnEnemies(int numberOfEnemies, String enemy) {
         for(int i = 0; i < numberOfEnemies; ++i){
-            new FirstEnemy();
-            new SecondEnemy();
-            new ThirdEnemy();
+            switch (enemy) {
+                case "FirstEnemy": new FirstEnemy(); break;
+                case "SecondEnemy": new SecondEnemy(); break;
+                case "ThirdEnemy": new SecondEnemy(); break;
+            }
         }
     }
 
-    private void spawnPowerUps(int numberOfPowerUps) {
+    public static void spawnPowerUps(int numberOfPowerUps, String powerup) {
         for(int i = 0; i < numberOfPowerUps; ++i){
-            new DragonBall1();
-            new DragonBall3();
-            new DragonBall5();
+            switch (powerup){
+                case "DragonBall1": new DragonBall1(); break;
+                case "DragonBall3": new DragonBall3(); break;
+                case "DragonBall5": new DragonBall5(); break;
+            }
         }
     }
 
