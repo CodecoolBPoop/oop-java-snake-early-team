@@ -13,7 +13,8 @@ import com.codecool.snake.eventhandler.InputHandler;
 import com.sun.javafx.geom.Vec2d;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.Pane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 
 
 public class Game extends Pane {
@@ -23,6 +24,7 @@ public class Game extends Pane {
 
 
     public Game() {
+
         Globals.getInstance().game = this;
         Globals.getInstance().display = new Display(this);
         Globals.getInstance().setupResources();
@@ -31,6 +33,10 @@ public class Game extends Pane {
     }
 
     public void init() {
+        BackgroundImage myBI= new BackgroundImage(new Image("background.png",1000,700,false,true),
+                BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        this.setBackground(new Background(myBI));
         spawnSnake();
         spawnEnemies(2);
         spawnPowerUps(2);
@@ -81,11 +87,10 @@ public class Game extends Pane {
 
     private void restartGame() {
 
-
         this.getChildren().clear();
 
         init();
-
+        start();
 
     }
 }
