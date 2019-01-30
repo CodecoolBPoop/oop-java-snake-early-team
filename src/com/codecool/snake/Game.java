@@ -16,7 +16,7 @@ import javafx.scene.layout.Pane;
 
 public class Game extends Pane {
     private Snake snake = null;
-    private GameTimer gameTimer = new GameTimer();
+    public GameTimer gameTimer = new GameTimer();
 
 
     public Game() {
@@ -35,19 +35,22 @@ public class Game extends Pane {
         GameLoop gameLoop = new GameLoop(snake);
         Globals.getInstance().setGameLoop(gameLoop);
         gameTimer.setup(gameLoop::step);
+        gameTimer.setSpawnEnemies();
         gameTimer.play();
+
     }
 
     public void start() {
         setupInputHandling();
         Globals.getInstance().startGame();
+
     }
 
     private void spawnSnake() {
         snake = new Snake(new Vec2d(500, 500));
     }
 
-    private void spawnEnemies(int numberOfEnemies) {
+    public static void spawnEnemies(int numberOfEnemies) {
         for(int i = 0; i < numberOfEnemies; ++i){
             new FirstEnemy();
             new SecondEnemy();
