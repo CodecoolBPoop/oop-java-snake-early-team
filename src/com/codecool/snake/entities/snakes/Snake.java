@@ -13,6 +13,7 @@ import javafx.scene.input.KeyCode;
 public class Snake implements Animatable {
     private static float speed = 2;
     private int health = 100;
+    private int bodyCounter = 4;
 
     private SnakeHead head;
     private DelayedModificationList<GameEntity> body;
@@ -23,6 +24,14 @@ public class Snake implements Animatable {
         body = new DelayedModificationList<>();
 
         addPart(4);
+    }
+
+    public int getBodyCounter() {
+        return bodyCounter;
+    }
+
+    public void updateBodyCounter(int count) {
+        this.bodyCounter = this.bodyCounter + count;
     }
 
     public int getHealth() {

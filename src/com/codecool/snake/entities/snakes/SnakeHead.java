@@ -49,10 +49,12 @@ public class SnakeHead extends GameEntity implements Interactable {
             String health = "Health: " + snake.getHealth();
             Globals.getInstance().display.changeHealtTitle(health);
             snake.removePart(1);
-            }
+            snake.updateBodyCounter(-1);
+        }
 
         if(entity instanceof DragonBall1){
             snake.addPart(1);
+            snake.updateBodyCounter(1);
         }
         if(entity instanceof DragonBall3){
             snake.increaseSpeed(0.3f);
@@ -60,7 +62,9 @@ public class SnakeHead extends GameEntity implements Interactable {
         }
         if(entity instanceof DragonBall5){
             snake.addPart(5);
+            snake.updateBodyCounter(5);
         }
+        System.out.println(snake.getBodyCounter());
     }
 
     @Override
