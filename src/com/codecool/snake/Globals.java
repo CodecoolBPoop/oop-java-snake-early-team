@@ -7,8 +7,8 @@ import javafx.scene.image.Image;
 public class Globals {
     private static Globals instance = null;
 
-    public static final double WINDOW_WIDTH = 1500;
-    public static final double WINDOW_HEIGHT = 1050;
+    public static final double WINDOW_WIDTH = 1450;
+    public static final double WINDOW_HEIGHT = 800;
 
     public Display display;
     public Game game;

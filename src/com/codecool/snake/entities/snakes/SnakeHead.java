@@ -50,16 +50,13 @@ public class SnakeHead extends GameEntity implements Interactable {
             snake.removePart(1);
         }
         if(entity instanceof DragonBall1){
-            System.out.println(getMessage());
             snake.addPart(1);
         }
         if(entity instanceof DragonBall3){
-            System.out.println(getMessage());
             snake.increaseSpeed(0.3f);
 
         }
         if(entity instanceof DragonBall5){
-            System.out.println(getMessage());
             snake.addPart(5);
         }
     }

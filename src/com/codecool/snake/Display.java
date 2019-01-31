@@ -10,7 +10,7 @@ import javafx.scene.text.Text;
 public class Display {
     private Pane displayPane;
     private DelayedModificationList<GameEntity> gameObjects = new DelayedModificationList<>();
-    private Text text = new Text(10,10,"Health: 100");
+    private Text text = new Text(15,30,"Health: 100");
 
 
     public Display(Pane pane) {
@@ -20,7 +20,7 @@ public class Display {
 
     public void changeHealtTitle(String updatedHealth){
         displayPane.getChildren().remove(text);
-        text = new Text(10,10, updatedHealth);
+        text = new Text(15,30, updatedHealth);
         displayPane.getChildren().add(text);
     }
 
