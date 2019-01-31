@@ -43,7 +43,14 @@ public class Globals {
 
     public void startGame() { gameLoop.start(); }
 
-    public void stopGame() { gameLoop.stop(); }
+    public void stopGame() {
+        gameLoop.stop();
+        GameTimer.spawnSpeedUptimer.stop();
+        GameTimer.spawnDragonball1timer.stop();
+        GameTimer.spawnEnemy1timer.stop();
+        GameTimer.spawnEnemy2timer.stop();
+        GameTimer.spawnEnemy3timer.stop();
+        GameTimer.spawnDragonball5timer.stop();}
 
     private Globals() {
         // singleton needs the class to have private constructor
