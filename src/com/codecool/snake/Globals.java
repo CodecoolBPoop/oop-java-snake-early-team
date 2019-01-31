@@ -7,8 +7,8 @@ import javafx.scene.image.Image;
 public class Globals {
     private static Globals instance = null;
 
-    public static final double WINDOW_WIDTH = 1000;
-    public static final double WINDOW_HEIGHT = 700;
+    public static final double WINDOW_WIDTH = 1500;
+    public static final double WINDOW_HEIGHT = 1050;
 
     public Display display;
     public Game game;
@@ -34,8 +34,8 @@ public class Globals {
         resources.addImage("FirstEnemy", new Image("enemy1.png"));
         resources.addImage("SecondEnemy", new Image("enemy2.png"));
         resources.addImage("ThirdEnemy", new Image("enemy3.png"));
-        resources.addImage("PowerUpBerry", new Image("dragonball1.png"));
-        resources.addImage("DragonBall3", new Image("dragonball3.png"));
+        resources.addImage("DragonBall1", new Image("dragonball1.png"));
+        resources.addImage("powerup_speed", new Image("powerup_speed.png"));
         resources.addImage("DragonBall5", new Image("dragonball5.png"));
     }
 

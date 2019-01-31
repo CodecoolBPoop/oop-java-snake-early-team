@@ -5,8 +5,9 @@ import com.codecool.snake.Globals;
 import com.codecool.snake.Utils;
 import com.codecool.snake.entities.Interactable;
 import com.codecool.snake.entities.enemies.Enemy;
-import com.codecool.snake.entities.powerups.SimplePowerUp;
+import com.codecool.snake.entities.powerups.DragonBall1;
 import com.codecool.snake.entities.powerups.DragonBall3;
+import com.codecool.snake.entities.powerups.DragonBall5;
 
 import com.sun.javafx.geom.Vec2d;
 import javafx.geometry.Point2D;

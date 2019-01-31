@@ -11,7 +11,7 @@ public class DragonBall3 extends GameEntity implements Interactable {
     private static Random rnd = new Random();
 
     public DragonBall3() {
-        setImage(Globals.getInstance().getImage("DragonBall3"));
+        setImage(Globals.getInstance().getImage("powerup_speed"));
 
         setX(rnd.nextDouble() * Globals.WINDOW_WIDTH);
         setY(rnd.nextDouble() * Globals.WINDOW_HEIGHT);

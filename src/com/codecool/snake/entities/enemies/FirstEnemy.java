@@ -36,7 +36,12 @@ public class FirstEnemy extends Enemy implements Animatable, Interactable {
     @Override
     public void step() {
         if (isOutOfBounds()) {
-            destroy();
+            double direction = rnd.nextDouble() * 360;
+            int speed = 2;
+            heading = Utils.directionToVector(direction, speed);
+            setX(getX() + heading.getX());
+            setY(getY() + heading.getY());
+
         }
         setX(getX() + heading.getX());
         setY(getY() + heading.getY());
