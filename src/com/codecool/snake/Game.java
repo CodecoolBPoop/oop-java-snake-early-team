@@ -1,6 +1,6 @@
 package com.codecool.snake;
 
-import com.codecool.snake.entities.enemies.SimpleEnemy;
+
 import com.codecool.snake.entities.enemies.FirstEnemy;
 import com.codecool.snake.entities.enemies.SecondEnemy;
 import com.codecool.snake.entities.powerups.DragonBall1;
@@ -31,7 +31,7 @@ public class Game extends Pane {
     }
 
     public void init() {
-        BackgroundImage myBI= new BackgroundImage(new Image("background.png",1000,700,false,true),
+        BackgroundImage myBI= new BackgroundImage(new Image("background.png",1450,800,false,true),
                 BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         this.setBackground(new Background(myBI));
