@@ -7,10 +7,13 @@ import com.codecool.snake.entities.GameEntity;
 import com.codecool.snake.eventhandler.InputHandler;
 
 import com.sun.javafx.geom.Vec2d;
+import javafx.scene.control.Alert;
 import javafx.scene.input.KeyCode;
 
 
 public class Snake implements Animatable {
+
+
     private static float speed = 2;
     private int health = 100;
     private int bodyCounter = 4;
@@ -90,6 +93,7 @@ public class Snake implements Animatable {
         if (head.isOutOfBounds() || health <= 0 || body.isEmpty()) {
             System.out.println("Game Over");
             Globals.getInstance().stopGame();
+            Globals.getInstance().infoBox("You lost the game!", ":(");
         }
     }
 

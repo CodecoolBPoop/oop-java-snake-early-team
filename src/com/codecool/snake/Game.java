@@ -17,6 +17,7 @@ import javafx.scene.layout.*;
 
 
 public class Game extends Pane {
+
     private Button restartBtn = new Button("Restart");
     private Snake snake = null;
     public GameTimer gameTimer = new GameTimer();

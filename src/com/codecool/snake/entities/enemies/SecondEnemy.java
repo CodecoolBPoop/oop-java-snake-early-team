@@ -14,6 +14,7 @@ import javafx.geometry.Point2D;
 
 public class SecondEnemy extends Enemy implements Animatable, Interactable {
 
+
     private Point2D heading;
     private static Random rnd = new Random();
 
@@ -24,10 +25,11 @@ public class SecondEnemy extends Enemy implements Animatable, Interactable {
         setX(rnd.nextDouble() * Globals.WINDOW_WIDTH);
         setY(rnd.nextDouble() * Globals.WINDOW_HEIGHT);
 
+
         double direction = rnd.nextDouble() * 360;
         //setRotate(direction);
 
-        int speed = 1;
+        int speed = 3;
         heading = Utils.directionToVector(direction, speed);
     }
 

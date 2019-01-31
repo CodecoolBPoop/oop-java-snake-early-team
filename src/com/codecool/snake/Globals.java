@@ -1,10 +1,26 @@
 package com.codecool.snake;
 
 import com.codecool.snake.resources.Resources;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 
 // class for holding all static stuff
 public class Globals {
+    public static void infoBox(String infoMessage, String titleBar)
+    {
+        /* By specifying a null headerMessage String, we cause the dialog to
+           not have a header */
+        infoBox(infoMessage, titleBar, null);
+    }
+
+    public static void infoBox(String infoMessage, String titleBar, String headerMessage)
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(titleBar);
+        alert.setHeaderText(headerMessage);
+        alert.setContentText(infoMessage);
+        alert.show();
+    }
     private static Globals instance = null;
 
     public static final double WINDOW_WIDTH = 1450;
@@ -18,6 +34,7 @@ public class Globals {
 
 
     public static Globals getInstance() {
+
         if(instance == null) instance = new Globals();
         return instance;
     }
