@@ -1,5 +1,6 @@
 package com.codecool.snake.entities.snakes;
 
+import com.codecool.snake.Game;
 import com.codecool.snake.entities.GameEntity;
 import com.codecool.snake.Globals;
 import com.codecool.snake.Utils;
@@ -14,7 +15,7 @@ import javafx.geometry.Point2D;
 
 
 public class SnakeHead extends GameEntity implements Interactable {
-    private static final float turnRate = 2;
+    private static float turnRate = 2;
     private Snake snake;
 
     public SnakeHead(Snake snake, Vec2d position) {
@@ -48,13 +49,14 @@ public class SnakeHead extends GameEntity implements Interactable {
             String health = "Health: " + snake.getHealth();
             Globals.getInstance().display.changeHealtTitle(health);
             snake.removePart(1);
-        }
+            }
+
         if(entity instanceof DragonBall1){
             snake.addPart(1);
         }
         if(entity instanceof DragonBall3){
             snake.increaseSpeed(0.3f);
-
+            turnRate += 0.3;
         }
         if(entity instanceof DragonBall5){
             snake.addPart(5);
