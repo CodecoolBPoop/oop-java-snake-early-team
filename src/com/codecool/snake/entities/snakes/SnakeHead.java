@@ -64,6 +64,7 @@ public class SnakeHead extends GameEntity implements Interactable {
             snake.addPart(5);
             snake.updateBodyCounter(5);
         }
+
         System.out.println(snake.getBodyCounter());
     }
 

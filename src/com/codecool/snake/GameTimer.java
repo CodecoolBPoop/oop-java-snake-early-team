@@ -38,7 +38,7 @@ public class GameTimer {
         spawnEnemy1timer.setCycleCount( Timeline.INDEFINITE );
 
         KeyFrame kf = new KeyFrame(
-                Duration.seconds(frameTime*700),
+                Duration.seconds(frameTime*180),
                 ae -> Game.spawnEnemies(1,"FirstEnemy"));
         spawnEnemy1timer.getKeyFrames().add( kf );
 
@@ -49,7 +49,7 @@ public class GameTimer {
         spawnEnemy2timer.setCycleCount( Timeline.INDEFINITE );
 
         KeyFrame kf = new KeyFrame(
-                Duration.seconds(frameTime*500),
+                Duration.seconds(frameTime*230),
                 ae -> Game.spawnEnemies(1,"SecondEnemy"));
         spawnEnemy2timer.getKeyFrames().add( kf );
 
@@ -59,7 +59,7 @@ public class GameTimer {
         spawnEnemy3timer.setCycleCount( Timeline.INDEFINITE );
 
         KeyFrame kf = new KeyFrame(
-                Duration.seconds(frameTime*300),
+                Duration.seconds(frameTime*270),
                 ae -> Game.spawnEnemies(1,"ThirdEnemy"));
         spawnEnemy3timer.getKeyFrames().add( kf );
 
@@ -70,7 +70,7 @@ public class GameTimer {
         spawnSpeedUptimer.setCycleCount( Timeline.INDEFINITE );
 
         KeyFrame kf = new KeyFrame(
-                Duration.seconds(frameTime*170),
+                Duration.seconds(frameTime*200),
                 ae -> Game.spawnPowerUps(1,"DragonBall3"));
         spawnSpeedUptimer.getKeyFrames().add( kf );
 
@@ -80,7 +80,7 @@ public class GameTimer {
         spawnSpeedUptimer.setCycleCount( Timeline.INDEFINITE );
 
         KeyFrame kf = new KeyFrame(
-                Duration.seconds(frameTime*230),
+                Duration.seconds(frameTime*250),
                 ae -> Game.spawnPowerUps(1,"DragonBall1"));
         spawnSpeedUptimer.getKeyFrames().add( kf );
 
@@ -90,7 +90,7 @@ public class GameTimer {
         spawnSpeedUptimer.setCycleCount( Timeline.INDEFINITE );
 
         KeyFrame kf = new KeyFrame(
-                Duration.seconds(frameTime*400),
+                Duration.seconds(frameTime*280),
                 ae -> Game.spawnPowerUps(1,"DragonBall5"));
         spawnSpeedUptimer.getKeyFrames().add( kf );
 
@@ -101,6 +101,7 @@ public class GameTimer {
         timer.play();
         spawnEnemy1timer.play();
         spawnEnemy2timer.play();
+        spawnEnemy3timer.play();
         spawnSpeedUptimer.play();
         spawnSpeedUptimer.play();
         spawnDragonball1timer.play();
