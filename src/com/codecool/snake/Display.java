@@ -4,15 +4,26 @@ import com.codecool.snake.entities.GameEntity;
 import java.util.List;
 
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 
 
 public class Display {
     private Pane displayPane;
     private DelayedModificationList<GameEntity> gameObjects = new DelayedModificationList<>();
+    private Text text = new Text(15,30,"Health: 100");
+
 
     public Display(Pane pane) {
         displayPane = pane;
+        displayPane.getChildren().add(text);
     }
+
+    public void changeHealtTitle(String updatedHealth){
+        displayPane.getChildren().remove(text);
+        text = new Text(15,30, updatedHealth);
+        displayPane.getChildren().add(text);
+    }
+
 
     public void add(GameEntity entity) {
         displayPane.getChildren().add(entity);
