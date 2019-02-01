@@ -3,6 +3,7 @@ package com.codecool.snake;
 
 import com.codecool.snake.entities.enemies.FirstEnemy;
 import com.codecool.snake.entities.enemies.SecondEnemy;
+import com.codecool.snake.entities.enemies.ThirdEnemy;
 import com.codecool.snake.entities.powerups.DragonBall1;
 import com.codecool.snake.entities.powerups.DragonBall3;
 import com.codecool.snake.entities.powerups.DragonBall5;
@@ -70,12 +71,14 @@ public class Game extends Pane {
         snake = new Snake(new Vec2d(500, 500));
     }
 
+
+
     public static void spawnEnemies(int numberOfEnemies, String enemy) {
         for(int i = 0; i < numberOfEnemies; ++i){
             switch (enemy) {
                 case "FirstEnemy": new FirstEnemy(); break;
                 case "SecondEnemy": new SecondEnemy(); break;
-                case "ThirdEnemy": new SecondEnemy(); break;
+                case "ThirdEnemy": new ThirdEnemy(); break;
             }
         }
     }
