@@ -102,6 +102,8 @@ public class Game extends Pane {
 
     private void restartGame() {
 
+
+        Globals.getInstance().stopGame();
         this.getChildren().clear();
 
         init();

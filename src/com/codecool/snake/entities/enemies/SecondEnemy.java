@@ -20,6 +20,7 @@ public class SecondEnemy extends Enemy implements Animatable, Interactable {
 
     public SecondEnemy() {
         super(10);
+        double travelled = rnd.nextInt(360);
 
         setImage(Globals.getInstance().getImage("SecondEnemy"));
         setX(rnd.nextDouble() * Globals.WINDOW_WIDTH);
